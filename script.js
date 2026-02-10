@@ -5,7 +5,9 @@ const teddy = document.querySelector(".teddy-container");
 const banner = document.getElementById("loveBanner");
 const heartsContainer = document.querySelector(".hearts");
 
-// Floating hearts
+/* =========================
+   FLOATING HEARTS (always)
+========================= */
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
@@ -21,16 +23,52 @@ function createHeart() {
 
 setInterval(createHeart, 500);
 
-// YES click
+/* =========================
+   YES BUTTON CLICK
+========================= */
 yesBtn.addEventListener("click", () => {
   teddy.style.display = "none";
-  banner.style.display = "block";
-  message.textContent = "YEEEEEEEEEE!!!💖";
+
+  // Small cinematic delay
+  setTimeout(() => {
+    banner.style.display = "block";
+  }, 400);
+
+  // Typing effect
+  const text = "I LOVE YOU 💖";
+  message.textContent = "";
+  let i = 0;
+
+  const typing = setInterval(() => {
+    if (i < text.length) {
+      message.textContent += text[i];
+      i++;
+    } else {
+      clearInterval(typing);
+    }
+  }, 120);
+
+  // Celebration heart burst
+  for (let i = 0; i < 60; i++) {
+    createHeart();
+  }
 });
 
-// NO runs away
+/* =========================
+   NO BUTTON MISCHIEF 😈
+========================= */
+const noTexts = [
+  "NO 💔",
+  "Are you sure? 😏",
+  "Think again 🙃",
+  "Oops 😌",
+  "You can't say no 😈",
+  "Nice try 😂"
+];
+
 noBtn.addEventListener("mouseover", () => {
   const x = Math.random() * 300 - 150;
   const y = Math.random() * 300 - 150;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  noBtn.textContent = noTexts[Math.floor(Math.random() * noTexts.length)];
 });
