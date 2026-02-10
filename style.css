@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  color: #b30059;
+  margin-bottom: 20px;
+}
+
+.teddy-container {
+  position: relative;
+}
+
+.teddy-container img {
+  width: 260px;
+}
+
+#yesBtn {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 14px 30px;
+  font-size: 18px;
+  background-color: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+#noBtn {
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  padding: 10px 22px;
+  font-size: 16px;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #800040;
+  font-weight: bold;
+}
+
+/* Smiley Banner */
+#loveBanner {
+  display: none;
+  text-align: center;
+}
+
+.smiley {
+  font-size: 90px;
+}
+
+.banner {
+  margin-top: 10px;
+  padding: 10px 30px;
+  background-color: #ff4d88;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #800040;
+}
+
+/* Floating hearts */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 22px;
+  animation: floatUp 6s linear;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
